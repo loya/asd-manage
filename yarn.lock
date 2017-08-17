@@ -10,9 +10,15 @@
     source-map "^0.5.6"
     typescript "^2.3.3"
 
-"@angular/animations@^4.2.4":
+"@angular/animations@^4.0.0", "@angular/animations@^4.2.4":
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-4.3.5.tgz#85aa454c887cc7cce11637ea5f6e9afad88490e1"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/cdk@^2.0.0-beta.8":
+  version "2.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-2.0.0-beta.8.tgz#71961c851dfbeb19e085e898bf5e4461408f8b57"
   dependencies:
     tslib "^1.7.1"
 
@@ -85,7 +91,7 @@
   optionalDependencies:
     node-sass "^4.3.0"
 
-"@angular/common@^4.2.4":
+"@angular/common@^4.0.0", "@angular/common@^4.2.4":
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.3.5.tgz#5f6b11347eae1dfc34623ccfd4c06c8f4c488e2d"
   dependencies:
@@ -105,13 +111,13 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@^4.2.4":
+"@angular/core@^4.0.0", "@angular/core@^4.2.4":
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.3.5.tgz#bd1efdbf1ebcfb9c27a238e2aa4c48159b0895bb"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/forms@^4.2.4":
+"@angular/forms@^4.0.0", "@angular/forms@^4.2.4":
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-4.3.5.tgz#519aad0ad82a1b87019937fa93fc147734737787"
   dependencies:
@@ -133,7 +139,7 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser@^4.2.4":
+"@angular/platform-browser@^4.0.0", "@angular/platform-browser@^4.2.4":
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-4.3.5.tgz#c0d03409499cc29f81677aab623c9086760d84ef"
   dependencies:
@@ -3252,6 +3258,10 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   dependencies:
     minimist "0.0.8"
 
+moment@^2.18.1:
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
+
 ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
@@ -3292,6 +3302,20 @@ ncname@1.0.x:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+
+ng-zorro-antd@^0.5.0-rc.0:
+  version "0.5.0-rc.0"
+  resolved "https://registry.yarnpkg.com/ng-zorro-antd/-/ng-zorro-antd-0.5.0-rc.0.tgz#1f82814c1554e898bf6910018f91c8ed7866d94c"
+  dependencies:
+    "@angular/animations" "^4.0.0"
+    "@angular/cdk" "^2.0.0-beta.8"
+    "@angular/common" "^4.0.0"
+    "@angular/core" "^4.0.0"
+    "@angular/forms" "^4.0.0"
+    "@angular/platform-browser" "^4.0.0"
+    moment "^2.18.1"
+    rxjs "^5.0.1"
+    zone.js "^0.8.14"
 
 no-case@^2.2.0:
   version "2.3.1"
@@ -4455,7 +4479,7 @@ rx-lite@*, rx-lite@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
 
-rxjs@^5.4.2:
+rxjs@^5.0.1, rxjs@^5.4.2:
   version "5.4.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.4.3.tgz#0758cddee6033d68e0fd53676f0f3596ce3d483f"
   dependencies:
