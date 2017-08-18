@@ -30,11 +30,16 @@ export class AppComponent implements OnInit {
            route = route.firstChild;
         }
         return route;
-      })
-      .subscribe(
-        event =>
-        !event.snapshot.url[0] ?   (this.router.url.endsWith('staffSystem') ? this.isVisible = false : '')
-         : this.isVisible = false);
+      }).subscribe(r => {
+
+          this.isVisible = this.router.url === '/';
+
+      });
+
+      // .subscribe(
+      //   event =>
+      //   !event.snapshot.url[0] ?   (this.router.url.endsWith('staffSystem') ? this.isVisible = false : '')
+      //    : this.isVisible = false);
   }
 
 }

@@ -7,7 +7,9 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
   imports: [
     RouterModule, NgZorroAntdModule
   ],
-  declarations: [LayoutComponent],
+  declarations: [
+    LayoutComponent
+],
   exports: [LayoutComponent]
 })
 export class LayoutModule { }

@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { StaffSystemModule } from './staffSystem/staffSystem.module';
-import { LayoutComponent } from './staffSystem/layout/layout.component';
-import { LayoutModule } from './staffSystem/layout/layout.module';
+import { LayoutComponent } from './staffSystem/components/layout/layout.component';
+import { LayoutModule } from './staffSystem/components/layout/layout.module';
+import { StaffLoginComponent } from './staff-login/staff-login.component';
+import { StaffLoginModule } from './staff-login/staff-login.module';
 
 const routes: Routes = [
   {
@@ -11,8 +13,12 @@ const routes: Routes = [
     children: [
         {
           path: 'staffSystem', loadChildren: './staffSystem/staffSystem.module#StaffSystemModule',
-          component: LayoutComponent
-        }
+           component: LayoutComponent
+      },
+        {
+          path: 'staffLogin',
+        component: StaffLoginComponent
+      }
     ]
    },
    // Not found
@@ -21,6 +27,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    StaffLoginModule,
     LayoutModule,
     RouterModule.forRoot(routes)
 ],
