@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';
+
+@Component({
+  template: ''
+})
+export class BaseComponent  {
+
+  constructor() {
+    console.log('base componet construtor');
+
+  }
+
+
+}

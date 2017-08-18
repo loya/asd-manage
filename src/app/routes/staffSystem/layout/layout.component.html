@@ -5,8 +5,8 @@
   </nz-header>
   <nz-layout>
     <ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'light'" style="">
-          <li nz-menu-item [nzSelected]='true'><a [routerLink]="'staffWorkLog'">工作记录</a></li>
-          <li nz-menu-item>nav 2</li>
+          <li nz-menu-item [nzSelected]='activedMenuItem=="staffWorkLog"'><a [routerLink]="'staffWorkLog'">工作记录</a></li>
+          <li nz-menu-item [nzSelected]='activedMenuItem=="staffConfig"'><a [routerLink]="[ 'staffConfig' ]">用户设置</a> </li>
           <li nz-menu-item>nav 3</li>
     </ul>
   </nz-layout>
@@ -43,7 +43,7 @@
           </nz-breadcrumb-item>
           <nz-breadcrumb-item>App</nz-breadcrumb-item>
       </nz-breadcrumb> -->
-      <nz-content style="background:#fff;padding:24px;min-height:280px;"> Content
+      <nz-content style="background:#fff;padding:24px;min-height:280px;">
          <div class="main"><router-outlet></router-outlet></div>
       </nz-content>
     </nz-layout>
