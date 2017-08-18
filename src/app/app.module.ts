@@ -6,14 +6,16 @@ import { AppComponent } from './app.component';
 
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { RoutesModule } from './routes/routes.module';
+// import { LayoutModule } from './routes/staffSystem/layout/layout.module';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
 ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     NgZorroAntdModule,
+    // LayoutModule,
      RoutesModule
   ],
   providers: [],
