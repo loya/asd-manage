@@ -10,14 +10,16 @@ export class StaffLoginComponent implements OnInit {
 
   submiting = false;
   loginForm: FormGroup;
-  constructor(public fb: FormBuilder) {
+  loginInfos = JSON.parse(localStorage.getItem('loginInfos'));
 
+  constructor(public fb: FormBuilder) {
   }
 
   ngOnInit() {
+
     this.loginForm = this.fb.group({
-      loginName: [null, [Validators.required]],
-      password: [null, [Validators.required]]
+      loginName: [this.loginInfos ? this.loginInfos.pop().loginName : null, [Validators.required]],
+      password: [ null, [Validators.required]]
     });
   }
 
@@ -30,7 +32,20 @@ export class StaffLoginComponent implements OnInit {
     }
     if (this.loginForm.valid) {
       console.log(value);
+      if (!this.loginInfos) {
+        this.loginInfos = [];
+        // this.loginInfos.infos = [];
+      }
+      this.loginInfos.push(value);
+      localStorage.setItem('loginInfos', JSON.stringify(this.loginInfos));
+
     }
+  }
+
+  getLoginInfo() {
+
+    // alert(localStorage.getItem('loginInfos'));
+console.log(localStorage.getItem('loginInfos'));
 
 
   }

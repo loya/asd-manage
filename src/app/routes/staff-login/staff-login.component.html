@@ -1,12 +1,5 @@
-<p>
-  staff-login works!
-</p>
 
-<div>
-
-</div>
-
-<div nz-row [nzType]="'flex'" [nzJustify]="'center'" [nzAlign]="'middle'">
+<div nz-row [nzType]="'flex'" [nzJustify]="'center'" [nzAlign]="'middle'" style="height:80%;">
   <div nz-col style='width:300px'>
     <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="submitForm(loginForm.value)">
       <div nz-form-item>
@@ -33,9 +26,12 @@
       </div>
       <div nz-form-item>
         <div nz-form-control style="text-align:right;">
-          <button nz-button [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="submiting">
+          <button nz-button [nzType]="'primary'"  [nzLoading]="submiting">
                   <span>登 陆</span>
               </button>
+          <button nz-button (click)="getLoginInfo()" [nzType]="'primary'"  type="button">
+              <span>登录信息</span>
+          </button>
 
         </div>
       </div>
