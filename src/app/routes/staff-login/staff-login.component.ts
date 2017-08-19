@@ -8,18 +8,8 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class StaffLoginComponent implements OnInit {
 
-  submiting= false;
+  submiting = false;
   loginForm: FormGroup;
-  _submitForm() {
-for (const i in this.loginForm.controls) {
-  if (this.loginForm.controls.hasOwnProperty(i)) {
-    const e = this.loginForm.controls[i];
-    e.markAsDirty();
-  }
-}
-
-
-  }
   constructor(public fb: FormBuilder) {
 
   }
@@ -27,8 +17,21 @@ for (const i in this.loginForm.controls) {
   ngOnInit() {
     this.loginForm = this.fb.group({
       loginName: [null, [Validators.required]],
-      password: ['', [Validators.required]]
+      password: [null, [Validators.required]]
     });
   }
 
+  submitForm(value: string) {
+    for (const i in this.loginForm.controls) {
+      if (this.loginForm.controls.hasOwnProperty(i)) {
+        const e = this.loginForm.controls[i];
+        e.markAsDirty();
+      }
+    }
+    if (this.loginForm.valid) {
+      console.log(value);
+    }
+
+
+  }
 }

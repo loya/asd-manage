@@ -2,37 +2,42 @@
   staff-login works!
 </p>
 
-<div >
+<div>
 
 </div>
 
 <div nz-row [nzType]="'flex'" [nzJustify]="'center'" [nzAlign]="'middle'">
   <div nz-col style='width:300px'>
-       <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="_submitForm(loginForm.value)" >
+    <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="submitForm(loginForm.value)">
       <div nz-form-item>
-        <div nz-form-control [nzValidateStatus]="loginForm.controls.loginName">
-          <nz-input [formControl]="loginForm.get('loginName')" [nzPlaceHolder]="'用户名'" [nzSize]="'large'">
+        <div nz-form-control [nzValidateStatus]="loginForm.controls.loginName" [nzHasFeedback]=true>
+          <nz-input [formControl]="loginForm.controls.loginName" [nzPlaceHolder]="'用户名'" [nzSize]="'large'">
             <ng-template #prefix>
               <i class="anticon anticon-user"></i>
             </ng-template>
           </nz-input>
-          <!-- <div nz-form-explain *ngIf="loginForm.controls.userName.dirty&&loginForm.controls.userName.hasError('required')">Please input your username!</div> -->
+          <div nz-form-explain *ngIf="loginForm.controls.loginName.dirty&&loginForm.controls.loginName.hasError('required')">
+            请输入登录用户名
+          </div>
         </div>
       </div>
       <div nz-form-item nz-row>
-          <div nz-form-control [nzValidateStatus]="loginForm.controls.password" [nzHasFeedback]=true>
-              <nz-input  formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'密码'" [nzSize]="'large'">
-                  <ng-template #prefix><i class="anticon anticon-lock"></i></ng-template>
-              </nz-input>
+        <div nz-form-control [nzValidateStatus]="loginForm.controls.password" [nzHasFeedback]=true>
+          <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'密码'" [nzSize]="'large'">
+            <ng-template #prefix><i class="anticon anticon-lock"></i></ng-template>
+          </nz-input>
+          <div nz-form-explain *ngIf="loginForm.controls['password'].dirty && loginForm.controls['password'].hasError('required')">
+            请输入登录密码
           </div>
+        </div>
       </div>
       <div nz-form-item>
-          <div nz-form-control>
-              <button nz-button  [nzType]="'primary'"  [nzSize]="'large'" [nzLoading]="submiting" >
-                  <span>登陆</span>
+        <div nz-form-control style="text-align:right;">
+          <button nz-button [nzType]="'primary'" [nzSize]="'large'" [nzLoading]="submiting">
+                  <span>登 陆</span>
               </button>
 
-          </div>
+        </div>
       </div>
       <!-- <div nz-form-item>
         <div nz-form-control [nzValidateStatus]="loginForm.controls.password">
@@ -60,5 +65,3 @@
 
 
 </div>
-
-

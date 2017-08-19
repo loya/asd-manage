@@ -9,7 +9,7 @@ import { NavigationEnd, Router, ActivatedRoute } from '@angular/router';
 export class LayoutComponent implements OnInit {
 
   isCollapsed: Boolean;
-  activedMenuItem= '';
+  activedMenuItem = '';
 
   constructor(public router: Router, public activatedRoute: ActivatedRoute) {
     // tslint:disable-next-line:max-line-length
@@ -26,21 +26,16 @@ export class LayoutComponent implements OnInit {
         }
         return route;
       }).subscribe(r => {
-        const temp = this.router.url.split('/');
-       this.activedMenuItem = temp[temp.length - 1].replace('staffSystem', 'staffWorkLog');
+        this.setActivedMenuItem();
       });
-    //   .subscribe(event =>
-    //     // !event ?  '' : console.log('layout url:' + event.snapshot.url[0].path) );
-    //     //  !event.snapshot.url[0] ?  '' : console.log('layout url:' + event.snapshot.url[0].path)
-    //     !event.snapshot.url[0] ? this.router.navigate(['./staffSystem/staffWorkLog'])
-    //       : this.activedMenuItem = event.snapshot.url[0].path
-    //   );
-    //    this.activatedRoute.url.subscribe(v =>
-    //   v.length === 0 ? this.router.navigate(['./staffSystem/staffWorkLog']) : this.activedMenuItem = v[0].path);
 
-       const temp = this.router.url.split('/');
-       this.activedMenuItem = temp[temp.length - 1].replace('staffSystem', 'staffWorkLog');
+    this.setActivedMenuItem();
 
-}
+  }
+
+  private setActivedMenuItem() {
+    const temp = this.router.url.split('/');
+    this.activedMenuItem = temp[temp.length - 1].replace('staffSystem', 'staffWorkLog');
+  }
 
 }
