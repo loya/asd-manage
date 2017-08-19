@@ -8,18 +8,27 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class StaffLoginComponent implements OnInit {
 
+  submiting= false;
   loginForm: FormGroup;
+  _submitForm() {
+for (const i in this.loginForm.controls) {
+  if (this.loginForm.controls.hasOwnProperty(i)) {
+    const e = this.loginForm.controls[i];
+    e.markAsDirty();
+  }
+}
+
+
+  }
   constructor(public fb: FormBuilder) {
-    this.loginForm = fb.group({
-      loginName: ['', Validators.required],
-      password: ['', Validators.required]
-    });
+
   }
 
   ngOnInit() {
-  }
-  _submitForm() {
-
+    this.loginForm = this.fb.group({
+      loginName: [null, [Validators.required]],
+      password: ['', [Validators.required]]
+    });
   }
 
 }
