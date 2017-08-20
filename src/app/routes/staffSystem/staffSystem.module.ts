@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { LayoutComponent } from './components/layout/layout.component';
+import { LayoutComponent } from './pages/layout/layout.component';
 import { Routes, RouterModule } from '@angular/router';
-import { StaffWorkLogComponent } from './components/staff-work-log/staff-work-log.component';
-import { BaseComponent } from './components/base/base.component';
-import { StaffConfigComponent } from './components/staff-config/staff-config.component';
-import { LayoutModule } from './components/layout/layout.module';
+import { StaffWorkLogComponent } from './pages/staff-work-log/staff-work-log.component';
+import { BaseComponent } from './pages/base/base.component';
+import { StaffConfigComponent } from './pages/staff-config/staff-config.component';
+import { LayoutModule } from './pages/layout/layout.module';
 import { StaffService } from './services/staff.service';
 
 
